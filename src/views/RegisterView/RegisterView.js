@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/auth-operations";
+import { register } from "../../redux/auth/authOperations";
 import { toast } from "react-toastify";
 
 import TextField from "@material-ui/core/TextField";

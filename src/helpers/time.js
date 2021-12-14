@@ -1,4 +1,4 @@
-export const time = [
+const time = [
   "8:00 am",
   "8:30 am",
   "9:00 am",
@@ -19,3 +19,4 @@ export const time = [
   "4:30 pm",
   "5:00 pm",
 ];
+export default time;

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
 import actions from "./taskActions";
 
 const InitialState = {
@@ -6,7 +6,7 @@ const InitialState = {
   loader: false,
   error: "",
 };
-const taskItems = createSlice(InitialState, {
+const taskItems = createReducer(InitialState, {
   [actions.getTask]: (state, { payload }) => ({
     ...state,
     items: [...payload],
@@ -38,4 +38,4 @@ const taskItems = createSlice(InitialState, {
   }),
 });
 
-export default taskItems.reducer;
+export default taskItems;

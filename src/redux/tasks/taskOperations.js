@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import actions from "./taskAction";
+import actions from "./taskActions";
 
 axios.defaults.baseURL = "http://localhost:3001/api/tasks";
 
@@ -8,9 +8,6 @@ const errorMessage = (err) =>
   toast.error(`There are some isues. 
   Message: ${err}.`);
 
-//fetchTaskStart,
-//   fetchTaskFinished,
-//   fetchTaskError,
 export const getTaskOperation = () => async (dispatch) => {
   dispatch(actions.fetchTaskStart());
   try {

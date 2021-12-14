@@ -1,8 +1,8 @@
 import "react-toastify/dist/ReactToastify.css";
-import CalendarTable from "../../components/ContactForm";
-import s from "./ContactView.module.css";
+import CalendarTable from "../../components/CalendarTable/CalendarTable";
+import s from "./CalendarView.module.css";
 
-export default function ContactsView() {
+export default function CalendarView() {
   return (
     <div className={s.container}>
       <CalendarTable />
