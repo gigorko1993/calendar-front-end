@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import actions from "./taskActions";
 
-axios.defaults.baseURL = "http://localhost:3001/api/tasks";
+axios.defaults.baseURL = "http://localhost:3001/api";
 
 const errorMessage = (err) =>
   toast.error(`There are some isues. 
@@ -11,7 +11,7 @@ const errorMessage = (err) =>
 export const getTaskOperation = () => async (dispatch) => {
   dispatch(actions.fetchTaskStart());
   try {
-    const { data } = await axios.get("/");
+    const { data } = await axios.get("/tasks/");
     dispatch(actions.getTask(data));
   } catch (error) {
     errorMessage(error);
@@ -24,7 +24,7 @@ export const getTaskOperation = () => async (dispatch) => {
 export const postTaskOperation = (task) => async (dispatch) => {
   dispatch(actions.fetchTaskStart());
   try {
-    const { data } = await axios.post("/create", task);
+    const { data } = await axios.post("/tasks/create", task);
     toast.success("Add new task 🚀");
     dispatch(actions.addTask(data));
   } catch (error) {
@@ -39,7 +39,7 @@ export const deleteTaskOperation = (id) => async (dispatch) => {
   const contactId = id.toString();
   dispatch(actions.fetchTaskStart());
   try {
-    await axios.delete(`/${contactId}`);
+    await axios.delete(`/tasks/${contactId}`);
     dispatch(actions.deleteContact(id));
   } catch (error) {
     errorMessage(error);
@@ -53,7 +53,7 @@ export const updateTaskOperation = (id) => async (dispatch) => {
   const contactId = id.toString();
   dispatch(actions.fetchTaskStart());
   try {
-    await axios.put(`/${contactId}`);
+    await axios.put(`/tasks/${contactId}`);
     dispatch(actions.updateTask(id));
   } catch (error) {
     errorMessage(error);
