@@ -1,0 +1,21 @@
+.NavList {
+  display: flex;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.NavItem:not(:last-child) {
+  margin-right: 30px;
+}
+
+.NavLink {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.NavLinkActive {
+  color: rgb(39, 117, 129);
+  text-decoration: underline;
+}

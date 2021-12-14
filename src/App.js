@@ -28,8 +28,8 @@ const App = () => {
         {isLoading ? (
           <Route path="*" element={<Loader />} />
         ) : (
-          <Route path="/calendar" element={<PrivateRoute />}>
-            <Route element={<CalendarView />}></Route>
+          <Route path="/" element={<PrivateRoute />}>
+            <Route path="/calendar" element={<CalendarView />} />
           </Route>
         )}
 
