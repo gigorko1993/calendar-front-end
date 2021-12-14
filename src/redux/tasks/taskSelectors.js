@@ -1,3 +1,6 @@
-const getTasks = (state) => state.tasks.taskItems;
+const getTasks = (state) => state.tasks.items;
 
-export default getTasks;
+const taskSelectors = {
+  getTasks,
+};
+export default taskSelectors;

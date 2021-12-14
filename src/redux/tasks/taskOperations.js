@@ -12,7 +12,7 @@ export const getTaskOperation = () => async (dispatch) => {
   dispatch(actions.fetchTaskStart());
   try {
     const { data } = await axios.get("/tasks/");
-    dispatch(actions.getTask(data));
+    dispatch(actions.getTask(data.data));
   } catch (error) {
     errorMessage(error);
     dispatch(actions.fetchTaskError(error));
@@ -49,11 +49,11 @@ export const deleteTaskOperation = (id) => async (dispatch) => {
   }
 };
 
-export const updateTaskOperation = (id) => async (dispatch) => {
+export const updateTaskOperation = (id, task) => async (dispatch) => {
   const contactId = id.toString();
   dispatch(actions.fetchTaskStart());
   try {
-    await axios.put(`/tasks/${contactId}`);
+    await axios.put(`/tasks/${contactId}`, ...task);
     dispatch(actions.updateTask(id));
   } catch (error) {
     errorMessage(error);

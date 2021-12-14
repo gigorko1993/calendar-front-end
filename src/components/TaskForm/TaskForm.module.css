@@ -1,0 +1,36 @@
+.thumb {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.form {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: inline-flex;
+  flex-direction: column;
+
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-top: 10px;
+  width: 250px;
+  padding: 4px;
+}
+
+.button {
+  width: 100px;
+  background-color: #fff;
+  border: 1px solid rgba(199, 199, 199, 0.6);
+  margin-bottom: 15px;
+}
+
+.button:hover,
+.button:focus {
+  background-color: rgb(127, 155, 231);
+  border: 1px solid transparent;
+}

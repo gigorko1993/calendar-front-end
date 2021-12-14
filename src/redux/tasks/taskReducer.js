@@ -24,15 +24,15 @@ const taskItems = createReducer(InitialState, {
     items: state.items.filter(({ id }) => id !== payload),
   }),
 
-  [actions.fetchContactsStart]: (state) => ({
+  [actions.fetchTaskStart]: (state) => ({
     ...state,
     loader: true,
   }),
-  [actions.fetchContactsFinished]: (state) => ({
+  [actions.fetchTaskFinished]: (state) => ({
     ...state,
     loader: false,
   }),
-  [actions.fetchContactsError]: (state, { payload }) => ({
+  [actions.fetchTaskError]: (state, { payload }) => ({
     ...state,
     error: payload,
   }),
