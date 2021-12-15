@@ -1,26 +1,28 @@
 const eventList = (arr) => {
-  return arr.reduce((acc, el, i) => {
-    if (i > 0) {
-      let right = el.start < acc[i - 1].start + acc[i - 1].duration;
+  return arr.reduce((acc, item, index) => {
+    if (index > 0) {
+      let right = item.start < acc[index - 1].start + acc[index - 1].duration;
       let width = right ? 100 : 200;
-
       if (right) {
-        acc[i - 1].width = width;
-
-        if (!acc[i - 2].right && i > 1) {
-          acc[i - 1].right = right;
+        acc[index - 1].width = width;
+        if (index > 1 && !acc[index - 2].right) {
+          acc[index - 1].right = right;
         }
       }
-      if (right && acc[i - 1].width === 90 && acc[i - 1].right === right) {
-        acc = [...acc, { ...el, right: !right, width }];
+      if (
+        right &&
+        acc[index - 1].width === 100 &&
+        acc[index - 1].right === right
+      ) {
+        acc = [...acc, { ...item, right: !right, width }];
         return acc;
       }
-      acc = [...acc, { ...el, right, width }];
+      acc = [...acc, { ...item, right, width }];
       return acc;
     }
     acc = [
       {
-        ...el,
+        ...item,
         right: false,
         width: 200,
       },

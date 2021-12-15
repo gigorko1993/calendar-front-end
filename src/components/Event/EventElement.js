@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EventElement = styled.div.attrs((props) => ({
-  "data-task": props.taskId,
+  "data-task": props.id,
 }))`
   position: absolute;
   border-left: 1px solid #91b5da;
@@ -11,6 +11,9 @@ const EventElement = styled.div.attrs((props) => ({
   left: ${(props) => props.transformX}px;
   height: ${(props) => props.height}px;
   width: ${(props) => props.width}px;
+  start: ${(props) => props.start}px;
+  duration: ${(props) => props.duration}px;
+  title: ${(props) => props.title}px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -16,6 +16,7 @@ const CalendarTable = () => {
   }, [dispatch]);
 
   const taskItems = useSelector(taskSelectors.getTasks);
+  console.log(`taskItems`, taskItems);
   const countedEventPosition = taskItems.length > 0 && eventList(taskItems);
 
   return (
@@ -27,7 +28,7 @@ const CalendarTable = () => {
             {time.map((time) => (
               <div key={time} className={s.timeThumb}>
                 <div className={s.scaleTime}>
-                  <div className={s.itemTime}>{time}</div>
+                  <div>{time}</div>
                 </div>
               </div>
             ))}
@@ -35,18 +36,16 @@ const CalendarTable = () => {
           {countedEventPosition && (
             <div className={s.eventThumb}>
               {countedEventPosition.map(
-                (task) =>
-                  task.start && (
-                    <Event
-                      key={task._id}
-                      start={task.start}
-                      duration={task.duration}
-                      title={task.title}
-                      right={task.right}
-                      width={task.width}
-                      id={task._id}
-                    />
-                  )
+                ({ id, start, duration, title, width }) => (
+                  <Event
+                    key={id}
+                    start={start}
+                    duration={duration}
+                    title={title}
+                    width={width}
+                    id={id}
+                  />
+                )
               )}
             </div>
           )}

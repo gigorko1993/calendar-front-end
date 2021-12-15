@@ -22,12 +22,18 @@ const Event = ({ title, start, duration, right, width, id }) => {
         transform={transform}
         height={height}
         width={width}
+        start={start}
+        duration={duration}
+        title={title}
         transformX={right ? 100 : 0}
-        taskId={id}
+        id={id}
+        key={id}
       >
         {title}
         <button onClick={() => handleDelete(id)}>Delete</button>
-        <button onClick={() => handleUpdate(id, width)}>Update</button>
+        <button onClick={() => handleUpdate(id, { start, duration, title })}>
+          Update
+        </button>
       </EventElement>
     </>
   );

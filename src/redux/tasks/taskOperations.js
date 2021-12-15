@@ -11,8 +11,8 @@ const errorMessage = (err) =>
 export const getTaskOperation = () => async (dispatch) => {
   dispatch(actions.fetchTaskStart());
   try {
-    const { data } = await axios.get("/tasks/");
-    dispatch(actions.getTask(data.data));
+    const { data } = await axios.get("/tasks");
+    dispatch(actions.getTask(Object.values(data.data)));
   } catch (error) {
     errorMessage(error);
     dispatch(actions.fetchTaskError(error));
@@ -36,11 +36,11 @@ export const postTaskOperation = (task) => async (dispatch) => {
 };
 
 export const deleteTaskOperation = (id) => async (dispatch) => {
-  const contactId = id.toString();
+  const taskId = id.toString();
   dispatch(actions.fetchTaskStart());
   try {
-    await axios.delete(`/tasks/${contactId}`);
-    dispatch(actions.deleteContact(id));
+    await axios.delete(`/tasks/${id}`);
+    dispatch(actions.deleteTask(taskId));
   } catch (error) {
     errorMessage(error);
     dispatch(actions.fetchTaskError(error));
@@ -50,11 +50,11 @@ export const deleteTaskOperation = (id) => async (dispatch) => {
 };
 
 export const updateTaskOperation = (id, task) => async (dispatch) => {
-  const contactId = id.toString();
+  const taskId = id.toString();
   dispatch(actions.fetchTaskStart());
   try {
-    await axios.put(`/tasks/${contactId}`, ...task);
-    dispatch(actions.updateTask(id));
+    await axios.put(`/tasks/${id}`, ...task);
+    dispatch(actions.updateTask(taskId));
   } catch (error) {
     errorMessage(error);
     dispatch(actions.fetchTaskError(error));

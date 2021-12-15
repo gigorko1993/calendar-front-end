@@ -1,6 +1,6 @@
 import { createAction } from "@reduxjs/toolkit";
 
-const addTask = createAction("tasks/Add", ({ start, duration, title }) => {
+const addTask = createAction("tasks/add", ({ start, duration, title }) => {
   return {
     payload: {
       start,
