@@ -6,24 +6,12 @@ import { postTaskOperation } from "../../redux/tasks/taskOperations";
 import s from "./TaskForm.module.css";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}));
-
 const TaskForm = () => {
-  const [start, setStart] = useState();
-  const [duration, setDuration] = useState();
+  const [start, setStart] = useState("");
+  const [duration, setDuration] = useState("");
   const [title, setTitle] = useState("");
-
-  const classes = useStyles();
 
   const dispatch = useDispatch();
 
@@ -51,13 +39,13 @@ const TaskForm = () => {
     e.preventDefault();
 
     dispatch(postTaskOperation({ start, duration, title }));
-    setStart();
-    setDuration();
+    setStart("");
+    setDuration("");
     setTitle("");
   };
 
   return (
-    <form cclassName={classes.root} className={s.form} onSubmit={onSubmit}>
+    <form className={s.form} onSubmit={onSubmit}>
       <div className={s.thumb}>
         <TextField
           id="standard-basic"

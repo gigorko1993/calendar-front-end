@@ -8,9 +8,9 @@ import LoginView from "./views/LoginView/LoginView";
 import PrivateRoute from "./components/Routes/PrivateRoutes";
 import CalendarView from "./views/CalendarView/CalendarView";
 import PublicRoute from "./components/Routes/PublicRoutes";
+import AuthBar from "./components/AuthBar";
 import Loader from "./components/Loader/Loader";
 import "react-toastify/dist/ReactToastify.css";
-// import AuthBar from "./components/AuthBar";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { ToastContainer } from "react-toastify";
 
@@ -25,6 +25,7 @@ const App = () => {
   return (
     <>
       <Routes>
+        <Route element={<AuthBar />} />
         {isLoading ? (
           <Route path="*" element={<Loader />} />
         ) : (

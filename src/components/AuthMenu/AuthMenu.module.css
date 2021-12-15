@@ -1,0 +1,17 @@
+.link {
+  color: #636363;
+  text-decoration: none;
+}
+.link:hover,
+.link:focus {
+  color: rgb(34, 34, 238);
+  text-decoration: underline;
+}
+
+.link + .link {
+  margin-left: 20px;
+}
+.activeLink {
+  color: rgb(88, 126, 233);
+  text-decoration: underline;
+}

@@ -6,8 +6,8 @@ import time from "../../helpers/time";
 import eventList from "../../helpers/renderEventList";
 import Event from "../Event/Event";
 import TaskForm from "../TaskForm/TaskForm";
-// import { test } from "./test";
 import s from "./CalendarTable.module.css";
+import { v4 as uuidv4 } from "uuid";
 
 const CalendarTable = () => {
   const dispatch = useDispatch();
@@ -26,9 +26,9 @@ const CalendarTable = () => {
         <div className={s.container}>
           <div>
             {time.map((time) => (
-              <div key={time} className={s.timeThumb}>
+              <div key={uuidv4()} className={s.timeThumb}>
                 <div className={s.scaleTime}>
-                  <div>{time}</div>
+                  <div key={uuidv4()}>{time}</div>
                 </div>
               </div>
             ))}

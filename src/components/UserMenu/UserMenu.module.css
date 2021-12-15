@@ -1,0 +1,15 @@
+.thumb {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: normal;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.titleThumb {
+  display: flex;
+  align-items: center;
+}

@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import s from "./RegisterView.module.css";
+import AuthMenu from "../../components/AuthMenu";
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ export default function RegisterView() {
 
   return (
     <div className={s.container}>
+      <AuthMenu />
       <h1>Registration Page</h1>
 
       <form onSubmit={handleSubmit} className={s.form} autoComplete="off">

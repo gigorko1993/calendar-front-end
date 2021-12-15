@@ -12,14 +12,14 @@ const addTask = createAction("tasks/add", ({ start, duration, title }) => {
 
 const getTask = createAction("tasks/get");
 const deleteTask = createAction("tasks/delete");
-const fetchTaskStart = createAction("tasks/loading");
-const fetchTaskFinished = createAction("tasks/finished");
-const fetchTaskError = createAction("tasks/error");
 const updateTask = createAction("tasks/update", (payload) => {
   return {
     ...payload,
   };
 });
+const fetchTaskStart = createAction("tasks/loading");
+const fetchTaskFinished = createAction("tasks/finished");
+const fetchTaskError = createAction("tasks/error");
 
 const actions = {
   addTask,

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/authOperations";
 import { toast } from "react-toastify";
+import AuthMenu from "../../components/AuthMenu";
 
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -46,8 +47,8 @@ export default function LoginView() {
 
   return (
     <div className={s.container}>
+      <AuthMenu />
       <h1>Login Page</h1>
-
       <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
         <TextField
           // id="standard-basic"
