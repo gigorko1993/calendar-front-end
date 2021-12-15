@@ -16,7 +16,6 @@ const CalendarTable = () => {
   }, [dispatch]);
 
   const taskItems = useSelector(taskSelectors.getTasks);
-  console.log(`taskItems`, taskItems);
   const countedEventPosition = taskItems.length > 0 && eventList(taskItems);
 
   return (
