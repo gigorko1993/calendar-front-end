@@ -7,8 +7,10 @@ const EventElement = styled.div.attrs((prop) => ({
   border-left: 1px solid #91b5da;
   padding-left: 2px;
   background-color: #e2ecf5;
-  transform: translateY(${(prop) => prop.transform}px);
-  left: ${(prop) => prop.transformX}px;
+  transform: translate(
+    ${(prop) => prop.transformX}px,
+    ${(prop) => prop.transform}px
+  );
   height: ${(prop) => prop.height}px;
   width: ${(prop) => prop.width}px;
   start: ${(prop) => prop.start}px;

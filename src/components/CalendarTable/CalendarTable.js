@@ -35,13 +35,14 @@ const CalendarTable = () => {
           {countedEventPosition && (
             <div className={s.eventThumb}>
               {countedEventPosition.map(
-                ({ id, start, duration, title, width }) => (
+                ({ id, start, duration, title, width, right }) => (
                   <Event
                     key={id}
                     start={start}
                     duration={duration}
                     title={title}
                     width={width}
+                    right={right}
                     id={id}
                   />
                 )

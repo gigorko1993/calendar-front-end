@@ -9,7 +9,6 @@ import EventElement from "./EventElement";
 
 const Event = ({ title, start, duration, right, width, id }) => {
   const { transform, height } = calcEventPosition(start, duration);
-  let leftPosition = right ? 93 : 0;
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(deleteTaskOperation(id));
@@ -27,7 +26,7 @@ const Event = ({ title, start, duration, right, width, id }) => {
         duration={duration}
         title={title}
         right={right}
-        transformX={leftPosition}
+        transformX={right ? 93 : 0}
         id={id}
         key={id}
       >
