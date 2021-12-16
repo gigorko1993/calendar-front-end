@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import authSelectors from "../../redux/auth/authSelectors";
+import { useDispatch } from "react-redux";
+// import authSelectors from "../../redux/auth/authSelectors";
 import { logOut } from "../../redux/auth/authOperations";
 
 import Fab from "@material-ui/core/Fab";
@@ -9,13 +9,13 @@ import s from "./UserMenu.module.css";
 
 export default function UserMenu() {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.getUsername);
+  // const name = useSelector(authSelectors.getUsername);
 
   return (
     <div className={s.thumb}>
       <div className={s.titleThumb}>
         <AccountCircleIcon />
-        <span className={s.title}>{name}</span>
+        <span className={s.title}>Code&Care</span>
       </div>
       <Fab
         variant="extended"

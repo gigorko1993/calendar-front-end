@@ -83,7 +83,7 @@ export default function RegisterView() {
           value={password}
           onChange={handleChange}
         />
-
+        <div className={s.buttonThumb}>
         <Button
           variant="contained"
           color="primary"
@@ -92,6 +92,7 @@ export default function RegisterView() {
         >
           Sign Up
         </Button>
+        </div>
       </form>
     </div>
   );

@@ -1,6 +1,9 @@
 .thumb {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  padding-top: 10px;
+  padding-right: 40px;
 }
 
 .title {

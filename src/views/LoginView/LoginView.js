@@ -66,15 +66,16 @@ export default function LoginView() {
           value={password}
           onChange={handleChange}
         />
-
-        <Button
-          variant="contained"
-          color="primary"
-          type="submit"
-          className={s.button}
-        >
-          Log In
-        </Button>
+        <div className={s.buttonThumb}>
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            className={s.button}
+          >
+            Log In
+          </Button>
+        </div>
       </form>
     </div>
   );

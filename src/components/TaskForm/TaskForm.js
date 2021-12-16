@@ -84,7 +84,7 @@ const TaskForm = () => {
           required
         />
       </div>
-      <Fab aria-label="Add" color="primary" type="submit">
+      <Fab aria-label="Add" color="primary" type="submit" size="small">
         <AddIcon />
       </Fab>
     </form>

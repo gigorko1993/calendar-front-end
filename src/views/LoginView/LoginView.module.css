@@ -12,5 +12,7 @@
 .button {
   width: 120px;
   display: block;
+}
+.buttonThumb {
   margin-top: 20px;
 }

@@ -1,6 +1,7 @@
 .thumb {
   display: flex;
   flex-direction: column;
+  margin-left: 80px;
   margin-right: 20px;
 }
 .form {
@@ -31,6 +32,6 @@
 
 .button:hover,
 .button:focus {
-  background-color: rgb(127, 155, 231);
+  background-color: rgb(160, 171, 201);
   border: 1px solid transparent;
 }

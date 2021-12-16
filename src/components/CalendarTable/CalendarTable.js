@@ -19,7 +19,7 @@ const CalendarTable = () => {
   const countedEventPosition = taskItems.length > 0 && eventList(taskItems);
 
   return (
-    <>
+    <div className={s.calendarThumb}>
       <TaskForm />
       <div className={s.calendar}>
         <div className={s.container}>
@@ -54,7 +54,7 @@ const CalendarTable = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default CalendarTable;
