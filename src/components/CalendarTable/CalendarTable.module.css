@@ -10,24 +10,37 @@
   display: flex;
   width: 200px;
 }
+.scaleThumb {
+  position: relative;
+}
+.borderThumb {
+  position: absolute;
+  left: 67px;
+  width: 180px;
+  transform: translateY(-1px);
+  border-top: inherit;
+}
+
 .timeThumb {
   display: flex;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 200;
   padding-bottom: 30px;
 }
 .timeThumb:nth-child(odd) {
-  border-top: 1px solid #f8f9fa;
+  border-top: 1px solid #a7a8a8;
 }
 
 .timeThumb:nth-child(even) {
-  font-size: 10px;
+  font-size: 12px;
 }
 .scaleTime {
   width: 57px;
   text-align: right;
   margin-right: 10px;
-  color: #d1d1d1;
+  color: #303233;
 }
+
 .eventThumb {
   position: relative;
   font-size: 14px;

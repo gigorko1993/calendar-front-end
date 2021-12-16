@@ -23,11 +23,14 @@ const CalendarTable = () => {
       <TaskForm />
       <div className={s.calendar}>
         <div className={s.container}>
-          <div>
+          <div className={s.scaleThumb}>
             {time.map((time) => (
               <div key={uuidv4()} className={s.timeThumb}>
+                <div className={s.borderThumb}></div>
                 <div className={s.scaleTime}>
-                  <div key={uuidv4()}>{time}</div>
+                  <div className={s.scaleItem} key={uuidv4()}>
+                    {time}
+                  </div>
                 </div>
               </div>
             ))}

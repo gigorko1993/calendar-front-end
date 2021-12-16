@@ -4,7 +4,7 @@ const EventElement = styled.div.attrs((prop) => ({
   "data-task": prop.id,
 }))`
   position: absolute;
-  border-left: 1px solid #91b5da;
+  border-left: 1px solid #6e9ecf;
   padding-left: 2px;
   background-color: #e2ecf5;
   transform: translate(
