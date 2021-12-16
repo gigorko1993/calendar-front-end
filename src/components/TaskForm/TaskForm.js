@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { postTaskOperation } from "../../redux/tasks/taskOperations";
+import { getTaskOperation } from "../../redux/tasks/taskOperations";
 
 import s from "./TaskForm.module.css";
 import Fab from "@material-ui/core/Fab";
@@ -39,6 +40,7 @@ const TaskForm = () => {
     e.preventDefault();
 
     dispatch(postTaskOperation({ start, duration, title }));
+    dispatch(getTaskOperation());
     setStart("");
     setDuration("");
     setTitle("");
