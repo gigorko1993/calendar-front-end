@@ -6,8 +6,8 @@ export const calcTime = (startHour, startMinutes, endHour, endMinutes) => {
 };
 
 export const calcEventPosition = (start, duration) => {
-  const transform = start * 1.52;
-  const height = duration * 1.52;
+  const transform = start * 1.58;
+  const height = duration * 1.58;
   return {
     transform,
     height,
