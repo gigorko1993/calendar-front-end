@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  deleteTaskOperation,
-  updateTaskOperation,
-} from "../../redux/tasks/taskOperations";
+import { deleteTaskOperation } from "../../redux/tasks/taskOperations";
 import { calcEventPosition } from "../../helpers/calculatePosition";
 import EventElement from "./EventElement";
+import TaskFormUpdate from "../TaskForm/TaskFormUpdate/TaskFormUpdate";
 
 const Event = ({ title, start, duration, right, width, id }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const { transform, height } = calcEventPosition(start, duration);
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(deleteTaskOperation(id));
   };
-  const handleUpdate = (id, payload) => {
-    dispatch(updateTaskOperation(id, payload));
+  const handleUpdate = () => {
+    setIsOpen(!isOpen);
   };
   return (
     <>
@@ -32,9 +31,15 @@ const Event = ({ title, start, duration, right, width, id }) => {
       >
         {title}
         <button onClick={() => handleDelete(id)}>Delete</button>
-        <button onClick={() => handleUpdate(id, { start, duration, title })}>
-          Update
-        </button>
+        <TaskFormUpdate
+          visible={isOpen}
+          start={start}
+          duration={duration}
+          title={title}
+          id={id}
+          key={id}
+        />
+        <button onClick={() => handleUpdate()}>Update</button>
       </EventElement>
     </>
   );
